@@ -5,13 +5,14 @@
     <p>Welcome to store page</p>
 {% for product in products %}
 
-    <div class="product">
+    
+        <a href="{% url 'product' slug=product.slug %}">
         <h2>{{ product.name }}</h2>
         <img src="{{product.thumbnail.url}}" alt="{{ product.name }}" style = " max-width: 250px;">
         <p>{{ product.description }}</p>
         <p>{{ product.price }}</p>
         <p>{{ product.category }}</p>
-    </div>
+        Voir l'article</a>
 
 {% endfor %}
 {% endblock %}
